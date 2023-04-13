@@ -1,0 +1,9 @@
+services:
+  sdk:
+    image: openwrtorg/sdk:aarch64_cortex-a53
+    volumes:
+      - .:/home/build/openwrt/local-build/natmap
+      - ./bin:/home/build/openwrt/bin
+      - ./build.sh:/home/build/openwrt/build.sh
+    command: /home/build/openwrt/build.sh
+      
