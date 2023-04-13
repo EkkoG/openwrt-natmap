@@ -43,11 +43,11 @@ validate_section_natmap() {
 		'qb_username:string' \
 		'qb_password:string' \
 		'qb_ipv6_address:string' \
-		'qb_allow_ipv6:bool:1' \
+		'qb_allow_ipv6:bool:0' \
 		'tr_rpc_url:string' \
 		'tr_username:string' \
 		'tr_password:string' \
-		'tr_allow_ipv6:bool:1' \
+		'tr_allow_ipv6:bool:0' \
 		'tr_ipv6_address:string'
 }
 

@@ -6,6 +6,7 @@ outter_port=$2
 ip4p=$3
 inner_port=$4
 protocol=$5
+env
 
 TR_RPC_URL=$(echo $TR_RPC_URL | sed 's/\/$//')
 # update port

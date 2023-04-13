@@ -11,7 +11,7 @@ if [ $IM_NOTIFY_ENABLE != 1 ]; then
 fi
 
 msg="$NAT_NAME\nNew $protocol port mapping: $inner_port -> $outter_ip:$outter_port\nIP4P: $ip4p"
-if [ -n "$MSG_OVERRIDE" ]; then
+if [ ! -z "$MSG_OVERRIDE" ]; then
 	msg="$MSG_OVERRIDE"
 fi
 

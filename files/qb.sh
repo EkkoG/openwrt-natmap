@@ -8,7 +8,6 @@ outter_port=$2
 ip4p=$3
 
 rule_name=$(echo "${NAT_NAME}_v6_allow" | sed 's/[^a-zA-Z0-9]/_/g' | awk '{print tolower($0)}')
-echo "ahhh"
 QB_WEB_UI_URL=$(echo $QB_WEB_UI_URL | sed 's/\/$//')
 # update port
 qbcookie=$(\

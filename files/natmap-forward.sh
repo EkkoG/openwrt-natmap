@@ -6,7 +6,7 @@ ip4p=$3
 inner_port=$4
 protocol=$5
 
-if [ $FORWARD_USE_NATMAP = 1 ]; then
+if [ ! -z $FORWARD_USE_NATMAP ] && [ $FORWARD_USE_NATMAP = '1' ]; then
 	exit 0
 fi
 
