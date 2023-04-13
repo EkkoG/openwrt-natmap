@@ -4,6 +4,6 @@ echo "src-link local_build $(pwd)/local-build" >> ./feeds.conf
 
 ./scripts/feeds update -a
 make defconfig
-./scripts/feeds install -p openwrt_packages -f natmap
+./scripts/feeds install -p local_build -f natmap
 
 make package/natmap/compile V=s
