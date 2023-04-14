@@ -44,6 +44,7 @@ define Package/natmap/install
 	$(INSTALL_DIR) $(1)/etc/natmap/plugin
 	$(INSTALL_BIN) ./files/qb.sh $(1)/etc/natmap/plugin
 	$(INSTALL_BIN) ./files/tr.sh $(1)/etc/natmap/plugin
+	$(INSTALL_BIN) ./files/emby.sh $(1)/etc/natmap/plugin
 	$(INSTALL_DIR) $(1)/etc/config/
 	$(INSTALL_CONF) ./files/natmap.config $(1)/etc/config/natmap
 	$(INSTALL_DIR) $(1)/etc/init.d/
