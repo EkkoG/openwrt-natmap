@@ -38,6 +38,8 @@ validate_section_natmap() {
 		'im_notify_channel_pushplus_token:string' \
 		'emby_url:string' \
 		'emby_api_key:string' \
+		'emby_use_https:bool:0' \
+		'emby_update_host_with_ip:bool:0' \
 		'qb_web_ui_url:string' \
 		'qb_username:string' \
 		'qb_password:string' \
