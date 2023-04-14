@@ -33,7 +33,6 @@ validate_section_natmap() {
 		'forward_use_natmap:bool:0' \
 		'im_notify_enable:bool:0' \
 		'im_notify_channel:string' \
-		'im_notify_channel_telegram_bot_user_id:string' \
 		'im_notify_channel_telegram_bot_chat_id:string' \
 		'im_notify_channel_telegram_bot_token:string' \
 		'im_notify_channel_pushplus_token:string' \
