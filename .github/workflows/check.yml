@@ -1,0 +1,22 @@
+name: Openwrt Build Bot
+on:
+  schedule:
+  - cron: 0 16 * * *
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    name: Check new version of Clash
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: EkkoG/openwrt-packages-version-checker@main
+        env:
+          COMMIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: heiher/natmap
+          BRANCH: main
