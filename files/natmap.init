@@ -87,9 +87,9 @@ natmap_instance() {
 			procd_append_param env $option_name="$value"
 		fi
 	done
-	[ $mode == 'qbittorrent' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/etc/natmap/plugin/qb.sh
-	[ $mode == 'transmission' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/etc/natmap/plugin/tr.sh
-	[ $mode == 'emby' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/etc/natmap/plugin/emby.sh
+	[ $mode == 'qbittorrent' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/qb.sh
+	[ $mode == 'transmission' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/tr.sh
+	[ $mode == 'emby' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/emby.sh
 	procd_append_param command -e /usr/lib/natmap/update.sh
 
 	procd_set_param respawn

@@ -38,13 +38,13 @@ define Package/natmap/install
 	$(INSTALL_BIN) ./files/natmap-update.sh $(1)/usr/lib/natmap/update.sh
 	$(INSTALL_BIN) ./files/natmap-notify.sh $(1)/usr/lib/natmap/notify.sh
 	$(INSTALL_BIN) ./files/natmap-forward.sh $(1)/usr/lib/natmap/forward.sh
-	$(INSTALL_DIR) $(1)/etc/natmap/plugin-notify
-	$(INSTALL_BIN) ./files/telegram_bot.sh $(1)/etc/natmap/plugin-notify
-	$(INSTALL_BIN) ./files/pushplus.sh $(1)/etc/natmap/plugin-notify
-	$(INSTALL_DIR) $(1)/etc/natmap/plugin
-	$(INSTALL_BIN) ./files/qb.sh $(1)/etc/natmap/plugin
-	$(INSTALL_BIN) ./files/tr.sh $(1)/etc/natmap/plugin
-	$(INSTALL_BIN) ./files/emby.sh $(1)/etc/natmap/plugin
+	$(INSTALL_DIR) $(1)/usr/lib/natmap/plugin-notify
+	$(INSTALL_BIN) ./files/telegram_bot.sh $(1)/usr/lib/natmap/plugin-notify
+	$(INSTALL_BIN) ./files/pushplus.sh $(1)/usr/lib/natmap/plugin-notify
+	$(INSTALL_DIR) $(1)/usr/lib/natmap/plugin
+	$(INSTALL_BIN) ./files/qb.sh $(1)/usr/lib/natmap/plugin
+	$(INSTALL_BIN) ./files/tr.sh $(1)/usr/lib/natmap/plugin
+	$(INSTALL_BIN) ./files/emby.sh $(1)/usr/lib/natmap/plugin
 	$(INSTALL_DIR) $(1)/etc/config/
 	$(INSTALL_CONF) ./files/natmap.config $(1)/etc/config/natmap
 	$(INSTALL_DIR) $(1)/etc/init.d/
