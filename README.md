@@ -34,6 +34,19 @@
 若对外提供的是 HTTPS 服务，需要勾选 「Update HTTPS Port」
 
 
+#### Cloudflare Origin Rules
+
+Cloudflare Origin Rules 可以设置回源端口，配合 DDNS 使用时，可以将 DDNS 域名指向 Cloudflare，然后将回源端口设置为打洞后的端口，这样就可以通过 Cloudflare 的 CDN 加速访问了
+
+需要配置 Cloudflare 的 API Key，邮箱 和 Zone ID，Zone ID 可以在 Cloudflare 的域名首页找到
+
+API Key 请访问 https://dash.cloudflare.com/profile/api-tokens，复制 Global API Key
+
+需要先在 Cloudflare 后台的 Rules - Origin Rules 下添加一个 Origin Rules，然后将 Origin Rules 的 Name 填入配置中
+
+Name 请保持唯一，否则会出现奇怪的问题
+
+
 ### 使用
 
 添加软件源
