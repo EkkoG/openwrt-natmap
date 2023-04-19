@@ -49,7 +49,11 @@ validate_section_natmap() {
 		'tr_username:string' \
 		'tr_password:string' \
 		'tr_allow_ipv6:bool:0' \
-		'tr_ipv6_address:string'
+		'tr_ipv6_address:string' \
+		'cloudflare_email:string' \
+		'cloudflare_api_key:string' \
+		'cloudflare_zone_id:string' \
+		'cloudflare_rule_name:string'
 }
 
 natmap_instance() {
@@ -90,6 +94,7 @@ natmap_instance() {
 	[ $mode == 'qbittorrent' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/qb.sh
 	[ $mode == 'transmission' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/tr.sh
 	[ $mode == 'emby' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/emby.sh
+	[ $mode == 'cloudflare_origin_rule' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/cloudflare_origin_rule.sh
 	procd_append_param command -e /usr/lib/natmap/update.sh
 
 	procd_set_param respawn
