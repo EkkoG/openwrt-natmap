@@ -40,7 +40,7 @@ Cloudflare Origin Rules 可以设置回源端口，配合 DDNS 使用时，可�
 
 需要配置 Cloudflare 的 API Key，邮箱 和 Zone ID，Zone ID 可以在 Cloudflare 的域名首页找到
 
-API Key 请访问 https://dash.cloudflare.com/profile/api-tokens，复制 Global API Key
+API Key 请访问 https://dash.cloudflare.com/profile/api-tokens 复制 Global API Key
 
 需要先在 Cloudflare 后台的 Rules - Origin Rules 下添加一个 Origin Rules，然后将 Origin Rules 的 Name 填入配置中
 
