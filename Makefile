@@ -13,7 +13,6 @@ PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=License
 
 PKG_BUILD_FLAGS:=no-mips16
-PKG_USE_MIPS16:=0
 PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/package.mk
@@ -23,6 +22,7 @@ define Package/natmap
   CATEGORY:=Network
   TITLE:=TCP/UDP port mapping tool for full cone NAT
   URL:=https://github.com/heiher/natmap
+  DEPENDS:=+jq +curl
 endef
 
 MAKE_FLAGS += REV_ID="$(PKG_VERSION)"
