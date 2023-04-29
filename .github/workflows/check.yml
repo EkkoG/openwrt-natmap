@@ -20,3 +20,4 @@ jobs:
           COMMIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: heiher/natmap
           BRANCH: main
+          SOURCE_URL: https://github.com/heiher/natmap/releases/download/{{version}}/natmap-{{version}}.tar.gz
