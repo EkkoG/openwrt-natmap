@@ -53,6 +53,7 @@ validate_section_natmap() {
 		'cloudflare_email:string' \
 		'cloudflare_api_key:string' \
 		'cloudflare_zone_id:string' \
+		'cloudflare_rule_target_url:string' \
 		'cloudflare_rule_name:string'
 }
 
@@ -95,6 +96,7 @@ natmap_instance() {
 	[ $mode == 'transmission' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/tr.sh
 	[ $mode == 'emby' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/emby.sh
 	[ $mode == 'cloudflare_origin_rule' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/cloudflare_origin_rule.sh
+	[ $mode == 'cloudflare_redirect_rule' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/cloudflare_redirect_rule.sh
 	procd_append_param command -e /usr/lib/natmap/update.sh
 
 	procd_set_param respawn
