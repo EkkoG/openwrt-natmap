@@ -17,11 +17,11 @@
 	source "${NOTIFY_SCRIPT}" "$@"
 }
 
-source /usr/lib/natmap/notify.sh "$@"
-
 if [ ! -z $INTERNAL_DEFINE_SCRIPT ]; then
 	echo "$NAT_NAME Excute internal define script: $INTERNAL_DEFINE_SCRIPT"
 	$INTERNAL_DEFINE_SCRIPT "$@"
 fi
 
 source /usr/lib/natmap/forward.sh "$@"
+
+source /usr/lib/natmap/notify.sh "$@"
