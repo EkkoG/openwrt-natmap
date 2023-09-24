@@ -54,7 +54,8 @@ validate_section_natmap() {
 		'cloudflare_api_key:string' \
 		'cloudflare_zone_id:string' \
 		'cloudflare_rule_target_url:string' \
-		'cloudflare_rule_name:string'
+		'cloudflare_rule_name:string' \
+		'proxy:string'
 }
 
 natmap_instance() {
