@@ -6,9 +6,9 @@ chat_id=$3
 token=$4
 function curl_proxy() {
     if [ -z "$PROXY" ]; then
-        curl $@
+        curl "$@"
     else
-        curl -x $PROXY $@
+        curl -x $PROXY "$@"
     fi
 }
 
