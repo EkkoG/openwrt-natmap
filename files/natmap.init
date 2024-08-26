@@ -103,6 +103,7 @@ natmap_instance() {
 	[ $mode == 'emby' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/emby.sh
 	[ $mode == 'cloudflare_origin_rule' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/cloudflare_origin_rule.sh
 	[ $mode == 'cloudflare_redirect_rule' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/cloudflare_redirect_rule.sh
+	[ $mode == 'proxy_port' ] && procd_append_param env INTERNAL_DEFINE_SCRIPT=/usr/lib/natmap/plugin/proxy_port.sh
 	procd_append_param command -e /usr/lib/natmap/update.sh
 
 	procd_set_param respawn
