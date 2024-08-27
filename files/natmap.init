@@ -56,7 +56,6 @@ validate_section_natmap() {
 		'cloudflare_rule_target_url:string' \
 		'cloudflare_rule_name:string' \
 		'proxy_port_content_url:string' \
-		'proxy_port_config_type:string:clash' \
 		'proxy_port_gist_id:string' \
 		'proxy_port_gist_filename:string' \
 		'proxy_port_github_token:string' \

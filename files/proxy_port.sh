@@ -9,14 +9,8 @@ if [ -z "$content" ]; then
   exit 1
 fi
 
-if [ "$PROXY_PORT_CONFIG_TYPE" = "clash" ]; then
-  # replace port, allow space before and after port
-  content=$(echo "$content" | sed "s/port[[:space:]]*:[[:space:]]*[0-9]*/port: $outter_port/g")
-else
-  echo "Unknown config type: $PROXY_PORT_CONFIG_TYPE"
-  exit 1
-fi
-
+# replace port, placeholder is OUTTER_PORT
+content=$(echo "$content" | sed "s/OUTTER_PORT/$outter_port/g")
 #replace newline to \n
 content=$(echo "$content" | awk '{printf "%s\\n", $0}')
 content=$(echo "$content" | sed 's/"/\\"/g')
