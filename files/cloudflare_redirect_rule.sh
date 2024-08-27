@@ -5,7 +5,7 @@ outter_ip=$1
 outter_port=$2
 
 get_current_rule() {
-    curl --request GET \
+    curl --retry 10 --request GET \
     --url https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/rulesets/phases/http_request_dynamic_redirect/entrypoint \
     --header "X-Auth-Key: $CLOUDFLARE_API_KEY" \
     --header "X-Auth-Email: $CLOUDFLARE_EMAIL" \
@@ -25,7 +25,7 @@ CLOUDFLARE_RULESET_ID=$(echo "$currrent_rule" | jq '.result.id' | sed 's/"//g')
 body=$(echo "$new_rule" | jq '.result')
 # delete last_updated
 body=$(echo "$body" | jq 'del(.last_updated)')
-curl --request PUT \
+curl --retry 10 --request PUT \
   --url https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/rulesets/$CLOUDFLARE_RULESET_ID \
   --header "X-Auth-Key: $CLOUDFLARE_API_KEY" \
   --header "X-Auth-Email: $CLOUDFLARE_EMAIL" \

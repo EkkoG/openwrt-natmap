@@ -11,8 +11,8 @@ env
 TR_RPC_URL=$(echo $TR_RPC_URL | sed 's/\/$//')
 # update port
 trauth="-u $TR_USERNAME:$TR_PASSWORD"
-trsid=$(curl -s $trauth $TR_RPC_URL/transmission/rpc | sed 's/.*<code>//g;s/<\/code>.*//g')
-curl -X POST \
+trsid=$(curl --retry 10 -s $trauth $TR_RPC_URL/transmission/rpc | sed 's/.*<code>//g;s/<\/code>.*//g')
+curl --retry 10 -X POST \
     -H "${trsid}" $trauth \
     -d '{"method":"session-set","arguments":{"peer-port":'${outter_port}'}}' \
     "$TR_RPC_URL/transmission/rpc"

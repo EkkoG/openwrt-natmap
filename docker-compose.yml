@@ -1,6 +1,6 @@
 services:
   sdk:
-    image: openwrt/sdk:mips_24kc
+    image: openwrt/sdk:x86-64
     volumes:
       - .:/builder/local-build/natmap
       - ./bin:/builder/bin

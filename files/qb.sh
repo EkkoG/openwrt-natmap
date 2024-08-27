@@ -11,13 +11,13 @@ rule_name=$(echo "${NAT_NAME}_v6_allow" | sed 's/[^a-zA-Z0-9]/_/g' | awk '{print
 QB_WEB_UI_URL=$(echo $QB_WEB_UI_URL | sed 's/\/$//')
 # update port
 qbcookie=$(\
-    curl -Ssi -X POST \
+    curl --retry 10 -Ssi -X POST \
     -d "username=${QB_USERNAME}&password=${QB_PASSWORD}" \
     "$QB_WEB_UI_URL/api/v2/auth/login" | \
     sed -n 's/.*\(SID=.\{32\}\);.*/\1/p' )
 echo "qbcookie: $qbcookie"
 echo "outter_port: $outter_port"
-curl -X POST \
+curl --retry 10 -X POST \
     -b "${qbcookie}" \
     -d 'json={"listen_port":"'${outter_port}'"}' \
     "$QB_WEB_UI_URL/api/v2/app/setPreferences"
